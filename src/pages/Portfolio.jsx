@@ -4,7 +4,15 @@ import { Projects } from "../assets/Projects";
 export default function Portfolio({ sheetHandler }) {
 	const [isSelected, setIsSelected] = useState("All");
 
-	const categories = ["All", "Web Development", "App Development", "UI/UX Design", "Graphic Design"];
+	const categories = [
+		"All",
+		"Web Development",
+		"App Development",
+		"AI & Machine Learning",
+		"IoT & Embedded Systems",
+		"Data Analytics",
+		"Python Tools",
+	];
 
 	const filterProjects =
 		isSelected === "All"
@@ -59,16 +67,32 @@ export default function Portfolio({ sheetHandler }) {
 							<span className="text-[#ffffffd8] font-thin mt-2 line-clamp-3 block">
 								{project.description}
 							</span>
-							<img
-								src={project.img[0]}
-								alt={project.title}
-								className="absolute bottom-[-40px] h-[180px] rounded-lg shadow-[0_10px_50px_-12px_rgba(0,0,0,0.85)] left-8 group-hover:rotate-[-3deg] transition-transform group-hover:scale-[1.05] group-hover:translate-x-[-10px] w-[60%] object-cover bg-top"
-							/>
-							<img
-								src={project.img[1] || project.img[0]}
-								alt={project.title}
-								className="absolute bottom-[-40px] h-[140px] rounded-lg shadow-[0_10px_50px_-12px_rgba(0,0,0,0.85)] right-8 group-hover:rotate-[3deg] transition-transform group-hover:scale-[1.05] group-hover:translate-x-[10px]"
-							/>
+
+							{project.img && project.img.length > 0 ? (
+								<>
+									<img
+										src={project.img[0]}
+										alt={project.title}
+										className="absolute bottom-[-40px] h-[180px] rounded-lg shadow-[0_10px_50px_-12px_rgba(0,0,0,0.85)] left-8 group-hover:rotate-[-3deg] transition-transform group-hover:scale-[1.05] group-hover:translate-x-[-10px] w-[60%] object-cover bg-top"
+									/>
+									<img
+										src={project.img[1] || project.img[0]}
+										alt={project.title}
+										className="absolute bottom-[-40px] h-[140px] rounded-lg shadow-[0_10px_50px_-12px_rgba(0,0,0,0.85)] right-8 group-hover:rotate-[3deg] transition-transform group-hover:scale-[1.05] group-hover:translate-x-[10px]"
+									/>
+								</>
+							) : (
+								<div className="absolute bottom-5 left-8 right-8 flex flex-wrap gap-2">
+									{project.tools?.slice(0, 5).map((tool, i) => (
+										<span
+											key={i}
+											className="text-xs px-2.5 py-1 bg-[#ffffff08] rounded-full text-yellow-200/70 border border-yellow-400/20"
+										>
+											{tool}
+										</span>
+									))}
+								</div>
+							)}
 						</div>
 					))}
 				</div>

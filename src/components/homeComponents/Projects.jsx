@@ -2,7 +2,9 @@ import React from "react";
 import ImageMarquee from "../ImageMarquee";
 import { Projects as projectdata } from "../../assets/Projects";
 export default function Projects() {
-	const images = projectdata?.map((project) => project?.img?.[0]);
+	const images = projectdata
+		?.filter((project) => project?.img?.length > 0)
+		.map((project) => project?.img?.[0]);
 
 	return (
 		<div className="hprojects homebox overflow-hidden relative lg:p-6 md:p-6 p-4">

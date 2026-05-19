@@ -82,6 +82,11 @@ title: "Python Programming For Beginners",
 issuer: "Udemy",
 link: "https://shorturl.at/NHg1y",
 },
+{
+	title: "Unity Game Development (FPV) — LinkedIn Post",
+	issuer: "LinkedIn",
+	link: "https://www.linkedin.com/posts/rohith-dachepally_unity-gamedevelopment-fpv-ugcPost-7433500447635648513-s34Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEl9SysBbDFLSO6WL6SVptf-ju5KIu3uIk8",
+},
 ];
 
 return (
@@ -323,6 +328,25 @@ Won first place in the Prototype category at Sowparnika-2K24, organized by IETE-
 </p>
 </div>
 </div>
+</li>
+<li className="timeline-item">
+	<div className="flex gap-4 hover:translate-x-2 duration-200 cursor-pointer transition-transform">
+		<div className="w-[50px] h-[50px] rounded-lg border border-gray-600 bg-[#2a2a2b] flex items-center justify-center flex-shrink-0 text-2xl text-yellow-400">
+			<ion-icon name="trophy"></ion-icon>
+		</div>
+		<div>
+			<h4 className="h4 timeline-item-title font-semibold">
+				<span className="text-yellow-400">1st Place</span> — Frame 2 Reality
+			</h4>
+			<span>VBIT | February 2026</span>
+			<p className="timeline-text">
+				Secured First Place in Frame 2 Reality (VBIT). In a constrained timeframe our team built a complete
+				First‑Person Perspective (FPV) coin‑collection game in Unity — a polished, playable demo ready for
+				presentation. The prototype included smooth FPV controls, dynamic coin spawning and collection,
+				a real‑time scoring system, environment tuning, and performance optimizations.
+			</p>
+		</div>
+	</div>
 </li>
 </ol>
 </section>
