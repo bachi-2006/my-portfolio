@@ -8,15 +8,13 @@ export default function Projects() {
 
 	return (
 		<div className="hprojects homebox overflow-hidden relative lg:p-6 md:p-6 p-4">
-			<a href="/portfolio">
-			<div className="cristik lg:text-4xl  md:text-4xl  text-2xl text-white">
-				Projects
-			</div>
-			<p className="opacity-75 lg:text-[16px] md:text-[10px] leading-6 text-yellow-200 font-thin">
-				<a href="/portfolio">
-				Take a Look at the Various Projets that i have made →
-				</a>
-			</p>
+			<a href="/portfolio" className="block h-full w-full">
+				<div className="cristik lg:text-4xl  md:text-4xl  text-2xl text-white">
+					Projects
+				</div>
+				<p className="opacity-75 lg:text-[16px] md:text-[10px] leading-6 text-yellow-200 font-thin">
+					Take a Look at the Various Projects that i have made →
+				</p>
 			</a>
 			<div className="absolute bottom-[-60px] ">
 				<ImageMarquee images={images} />

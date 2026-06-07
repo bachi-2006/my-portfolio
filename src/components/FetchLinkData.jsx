@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import cheerio from "cheerio";
 
 const FetchLinkData = ({
 	url = "https://www.whatsapp.com/",
@@ -18,28 +17,37 @@ const FetchLinkData = ({
 			return;
 		}
 
+		if (url.startsWith("/")) {
+			setTitle(alt || "Portfolio Link");
+			// Optional: Use default favicon if it's internal
+			setFaviconUrl("/logo.svg"); 
+			setError("");
+			return;
+		}
+
 		setError("");
 		try {
 			const proxyUrl = "https://api.allorigins.win/get?url=";
 			const response = await axios.get(`${proxyUrl}${encodeURIComponent(url)}`);
 			const html = response.data.contents;
-			const $ = cheerio.load(html);
+			
+			const parser = new DOMParser();
+			const doc = parser.parseFromString(html, "text/html");
 
-			const pageTitle = $("title").text();
+			const pageTitle = doc.querySelector("title")?.textContent || "";
 			setTitle(pageTitle);
 
-			const link = $('link[rel="icon"], link[rel="shortcut icon"]').attr(
-				"href"
-			);
+			const linkElement = doc.querySelector('link[rel="icon"], link[rel="shortcut icon"]');
+			const link = linkElement ? linkElement.getAttribute("href") : null;
 			const favicon = link
 				? new URL(link, url).href
 				: new URL("/favicon.ico", url).href;
 			setFaviconUrl(favicon);
 
 			const meta = {};
-			$("meta").each((i, el) => {
-				const name = $(el).attr("name");
-				const content = $(el).attr("content");
+			doc.querySelectorAll("meta").forEach((el) => {
+				const name = el.getAttribute("name") || el.getAttribute("property");
+				const content = el.getAttribute("content");
 				if (name && content) {
 					meta[name] = content;
 				}

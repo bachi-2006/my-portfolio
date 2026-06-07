@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ScrambleText from "./ScrambleText";
+
 export default function SideNav() {
+	const [isOpen, setIsOpen] = useState(false);
+
 	return (
-		<aside className="sidebar" data-sidebar>
+		<aside className={`sidebar ${isOpen ? "active" : ""}`} data-sidebar>
 			<div className="sidebar-info">
 				<figure className="avatar-box">
 					<img
-						src="avatar/profile.jpg"
+						src="/avatar/profile.jpg"
 						className="rounded-full object-cover"
 						alt="Rohith Dachepally"
 						width="80"
@@ -19,14 +22,13 @@ export default function SideNav() {
 						Rohith Dachepally
 					</ScrambleText>
 					<div className="flex gap-2 flex-wrap">
-					<p className="title">Tech Enthusiast | Data Analytics | CS Undergrad @ VBIT</p>
+						<p className="title">Tech Enthusiast | Data Analytics | CS Undergrad @ VBIT</p>
 					</div>
 				</div>
 
-				<button className="info_more-btn" data-sidebar-btn>
-					<span>Show Contacts</span>
-
-					<ion-icon name="chevron-down"></ion-icon>
+				<button className="info_more-btn" onClick={() => setIsOpen(!isOpen)} data-sidebar-btn>
+					<span>{isOpen ? "Hide Contacts" : "Show Contacts"}</span>
+					<ion-icon name={isOpen ? "chevron-up" : "chevron-down"}></ion-icon>
 				</button>
 			</div>
 
@@ -56,8 +58,8 @@ export default function SideNav() {
 						<div className="contact-info">
 							<p className="contact-title">Phone</p>
 
-							<a href="tel:+917975578025" className="contact-link">
-								+91 97XXX XXXXX
+							<a href="tel:+9174167XXXXX" className="contact-link">
+								+91 74167 XXXXX
 							</a>
 						</div>
 					</li> 
@@ -70,7 +72,7 @@ export default function SideNav() {
 						<div className="contact-info">
 							<p className="contact-title">Birthday</p>
 
-							<time datetime="1982-06-23">December 02, 2004</time>
+							<time dateTime="200x-0x-2x">2x-0x-200x</time>
 						</div>
 					</li>
 
@@ -113,7 +115,6 @@ export default function SideNav() {
 							<ion-icon name="logo-facebook"></ion-icon>
 						</a>
 					</li>
-
 				</ul>
 			</div>
 		</aside>

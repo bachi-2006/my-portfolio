@@ -1,11 +1,10 @@
-﻿import React from "react";
+import React from "react";
 
-export default function About() {
 const Experience = [
 {
 company: "Google CrowdSource VBIT",
 companyLogo:
-"google-crowdsource.png",
+"/google-crowdsource.png",
 role: "Hospitality Coordinator",
 duration: "Jun 2025 - Present",
 description:
@@ -72,22 +71,105 @@ skills: [
 ];
 
 const Certifications = [
-{
-title: "Introduction to PowerBI",
-issuer: "SimpliLearn",
-link: "https://shorturl.at/vb7lV",
-},
-{
-title: "Python Programming For Beginners",
-issuer: "Udemy",
-link: "https://shorturl.at/NHg1y",
-},
-{
-	title: "Unity Game Development (FPV) — LinkedIn Post",
-	issuer: "LinkedIn",
-	link: "https://www.linkedin.com/posts/rohith-dachepally_unity-gamedevelopment-fpv-ugcPost-7433500447635648513-s34Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEl9SysBbDFLSO6WL6SVptf-ju5KIu3uIk8",
-},
+  {
+    title: "AWS Academy Graduate — AWS Academy Cloud Foundations",
+    issuer: "AWS Academy",
+    category: "Cloud & OS",
+    link: "/certificates/aws_cloud_foundations.pdf"
+  },
+  {
+    title: "AWS Academy Graduate — AWS Academy Cloud Architecting",
+    issuer: "AWS Academy",
+    category: "Cloud & OS",
+    link: "/certificates/aws_cloud_architecting.pdf"
+  },
+  {
+    title: "CISCO Linux Essentials",
+    issuer: "Cisco Networking Academy",
+    category: "Cloud & OS",
+    link: "/certificates/cisco_linux_essentials.pdf"
+  },
+  {
+    title: "CISCO Linux Certification",
+    issuer: "Cisco Networking Academy",
+    category: "Cloud & OS",
+    link: "/certificates/cisco_linux.pdf"
+  },
+  {
+    title: "Google Cohort-8 Android Developer",
+    issuer: "Google / Android Developer",
+    category: "Development & Other",
+    link: "/certificates/cohort8_android_developer.pdf"
+  },
+  {
+    title: "HackerRank SQL (Advanced)",
+    issuer: "HackerRank",
+    category: "Data & AI",
+    link: "/certificates/hackerrank_sql_advanced.pdf"
+  },
+  {
+    title: "IBM Generative AI Developer",
+    issuer: "IBM",
+    category: "Data & AI",
+    link: "/certificates/ibm_generative_ai.pdf"
+  },
+  {
+    title: "HP LIFE Data Analytics",
+    issuer: "HP LIFE",
+    category: "Data & AI",
+    link: "/certificates/hp_life_data_analytics.pdf"
+  },
+  {
+    title: "Data Analyst Certification",
+    issuer: "Oneroadmap",
+    category: "Data & AI",
+    link: "/certificates/oneroadmap_data_analyst.pdf"
+  },
+  {
+    title: "Introduction to PowerBI",
+    issuer: "SimpliLearn",
+    category: "Data & AI",
+    link: "/certificates/simplilearn_powerbi.pdf"
+  },
+  {
+    title: "Python Programming For Beginners",
+    issuer: "Udemy",
+    category: "Development & Other",
+    link: "/certificates/udemy_python_beginners.pdf"
+  },
+  {
+    title: "C Programming Certification",
+    issuer: "Edube",
+    category: "Development & Other",
+    link: "/certificates/c_programming_edube.pdf"
+  },
+  {
+    title: "AI Workshop Certification",
+    issuer: "Be10x",
+    category: "Data & AI",
+    link: "/certificates/be10x_ai_workshop.pdf"
+  },
+  {
+    title: "ChatGPT and AI Workshop",
+    issuer: "AI Workshop",
+    category: "Data & AI",
+    link: "/certificates/chatgpt_ai_workshop.pdf"
+  },
+  {
+    title: "Unity Game Development (FPV) — LinkedIn Post",
+    issuer: "LinkedIn",
+    category: "Development & Other",
+    link: "https://www.linkedin.com/posts/rohith-dachepally_unity-gamedevelopment-fpv-ugcPost-7433500447635648513-s34Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEl9SysBbDFLSO6WL6SVptf-ju5KIu3uIk8"
+  }
 ];
+
+export default function About() {
+  const [selectedCategory, setSelectedCategory] = React.useState("All");
+  const categories = ["All", "Cloud & OS", "Data & AI", "Development & Other"];
+  
+  const filteredCerts = selectedCategory === "All"
+    ? Certifications
+    : Certifications.filter(c => c.category === selectedCategory);
 
 return (
 <article className="about active" data-page="about">
@@ -220,35 +302,53 @@ style={{ width: `${s.level}%` }}
 
 {/* Certifications */}
 <section className="timeline">
-<div className="title-wrapper">
-<div className="icon-box">
-<ion-icon name="ribbon-outline"></ion-icon>
-</div>
-<h3 className="h3 font-semibold">Certifications</h3>
-</div>
+  <div className="title-wrapper">
+    <div className="icon-box">
+      <ion-icon name="ribbon-outline"></ion-icon>
+    </div>
+    <h3 className="h3 font-semibold">Certifications</h3>
+  </div>
 
-<ol className="timeline-list">
-{Certifications.map((cert, index) => (
-<li className="timeline-item" key={index}>
-<a
-href={cert.link}
-target="_blank"
-rel="noopener noreferrer"
-className="flex gap-4 hover:translate-x-2 duration-200 cursor-pointer transition-transform"
->
-<div className="w-[50px] h-[50px] rounded-lg border border-gray-600 bg-[#2a2a2b] flex items-center justify-center flex-shrink-0 text-2xl text-yellow-400">
-<ion-icon name="ribbon"></ion-icon>
-</div>
-<div>
-<h4 className="h4 timeline-item-title font-semibold">
-{cert.title}
-</h4>
-<span>{cert.issuer}</span>
-</div>
-</a>
-</li>
-))}
-</ol>
+  <div className="flex gap-2 mb-6 flex-wrap">
+    {categories.map(cat => (
+      <button
+        key={cat}
+        onClick={() => setSelectedCategory(cat)}
+        className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
+          selectedCategory === cat
+            ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-black shadow-md shadow-yellow-500/25"
+            : "bg-[#2a2a2b] text-gray-400 hover:text-white"
+        }`}
+      >
+        {cat}
+      </button>
+    ))}
+  </div>
+
+  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {filteredCerts.map((cert, index) => (
+      <li
+        className="bg-[#212123] border border-gray-800 rounded-2xl p-5 hover:translate-y-[-4px] hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/5 transition-all duration-300 cursor-pointer"
+        key={index}
+        onClick={() => window.open(cert.link, "_blank")}
+      >
+        <div className="flex gap-4 items-start">
+          <div className="w-[50px] h-[50px] rounded-xl border border-gray-800 bg-[#2a2a2b] flex items-center justify-center flex-shrink-0 text-xl text-yellow-400">
+            <ion-icon name="ribbon-outline"></ion-icon>
+          </div>
+          <div className="flex-1">
+            <h4 className="text-white text-base font-semibold leading-tight hover:text-yellow-400 transition-colors">
+              {cert.title}
+            </h4>
+            <span className="text-xs text-gray-400 block mt-1">{cert.issuer}</span>
+            <span className="inline-block mt-3 text-xs bg-yellow-500/10 text-yellow-400 px-2.5 py-0.5 rounded-full font-medium">
+              {cert.category}
+            </span>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ul>
 </section>
 
 <div className="separator"></div>
@@ -314,23 +414,23 @@ Sri Chaitanya College of Education
 
 <ol className="timeline-list">
 <li className="timeline-item">
-<div className="flex gap-4 hover:translate-x-2 duration-200 cursor-pointer transition-transform">
-<div className="w-[50px] h-[50px] rounded-lg border border-gray-600 bg-[#2a2a2b] flex items-center justify-center flex-shrink-0 text-2xl text-yellow-400">
-<ion-icon name="trophy"></ion-icon>
-</div>
-<div>
-<h4 className="h4 timeline-item-title font-semibold">
-<span className="text-yellow-400">1st Place</span> — Sowparnika-2K24
-</h4>
-<span>IETE-ISF VBIT | February 2024</span>
-<p className="timeline-text">
-Won first place in the Prototype category at Sowparnika-2K24, organized by IETE-ISF at Vignana Bharathi Institute of Technology (VBIT). Built an IR based Smart Home Design using Arduino and IR sensors, demonstrating real-time sensor control and intelligent automation.
-</p>
-</div>
-</div>
+	<a href="https://www.linkedin.com/posts/rohith-dachepally_proud-to-share-our-award-winning-project-ugcPost-7266166692341252096-bLFU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEl9SysBbDFLSO6WL6SVptf-ju5KIu3uIk8" target="_blank" rel="noopener noreferrer" className="flex gap-4 hover:translate-x-2 duration-200 cursor-pointer transition-transform">
+		<div className="w-[50px] h-[50px] rounded-lg border border-gray-600 bg-[#2a2a2b] flex items-center justify-center flex-shrink-0 text-2xl text-yellow-400">
+			<ion-icon name="trophy"></ion-icon>
+		</div>
+		<div>
+			<h4 className="h4 timeline-item-title font-semibold">
+				<span className="text-yellow-400">1st Place</span> — Sowparnika-2K24
+			</h4>
+			<span>IETE-ISF VBIT | February 2024</span>
+			<p className="timeline-text">
+				Won first place in the Prototype category at Sowparnika-2K24, organized by IETE-ISF at Vignana Bharathi Institute of Technology (VBIT). Built an IR based Smart Home Design using Arduino and IR sensors, demonstrating real-time sensor control and intelligent automation.
+			</p>
+		</div>
+	</a>
 </li>
 <li className="timeline-item">
-	<div className="flex gap-4 hover:translate-x-2 duration-200 cursor-pointer transition-transform">
+	<a href="https://www.linkedin.com/posts/rohith-dachepally_unity-gamedevelopment-fpv-ugcPost-7433500447635648513-s34Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEl9SysBbDFLSO6WL6SVptf-ju5KIu3uIk8" target="_blank" rel="noopener noreferrer" className="flex gap-4 hover:translate-x-2 duration-200 cursor-pointer transition-transform">
 		<div className="w-[50px] h-[50px] rounded-lg border border-gray-600 bg-[#2a2a2b] flex items-center justify-center flex-shrink-0 text-2xl text-yellow-400">
 			<ion-icon name="trophy"></ion-icon>
 		</div>
@@ -346,7 +446,7 @@ Won first place in the Prototype category at Sowparnika-2K24, organized by IETE-
 				a real‑time scoring system, environment tuning, and performance optimizations.
 			</p>
 		</div>
-	</div>
+	</a>
 </li>
 </ol>
 </section>

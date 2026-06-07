@@ -5,7 +5,7 @@ import ZoomImg from "./ZoomImg";
 export default function PortfolioSheet({ sheetOpen, setSheetOpen, sheetData }) {
 	return (
 		<div
-			className={` fixed top-0 left-0  w-full h-full z-[20] duration-[400ms] ${
+			className={` fixed top-0 left-0  w-full h-full z-[20] duration-300 ${
 				sheetOpen
 					? "bg-[#0000007c]  cursor-pointer"
 					: "bg-[#00000000] pointer-events-none"
@@ -13,7 +13,7 @@ export default function PortfolioSheet({ sheetOpen, setSheetOpen, sheetData }) {
 		>
 			<div className="w-full h-full" onClick={() => setSheetOpen(false)}></div>
 			<div
-				className={`portfolioSheet absolute right-0 top-0   h-screen max-w-[800px] duration-[400ms] ease-in transition-[width] overflow-y-auto ${
+				className={`portfolioSheet absolute right-0 top-0   h-screen max-w-[800px] duration-300 ease-in transition-[width] overflow-y-auto ${
 					sheetOpen ? "w-full" : "w-0"
 				}`}
 			>

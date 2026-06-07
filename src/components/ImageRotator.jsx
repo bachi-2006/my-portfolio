@@ -46,7 +46,7 @@ const ImageRotator = ({ centralImage, orbits }) => {
 								}}
 							>
 								<img
-									src={image}
+									src={image.startsWith("http") || image.startsWith("/") ? image : '/' + image}
 									alt={`Orbiting ${orbitIndex}-${imageIndex}`}
 									className="orbiting-image"
 								/>

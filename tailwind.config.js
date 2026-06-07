@@ -17,6 +17,14 @@ module.exports = {
       },
     },
     extend: {
+      colors: {
+        background: "hsl(0, 0%, 7%)",
+        foreground: "hsl(0, 0%, 100%)",
+        muted: {
+          DEFAULT: "hsl(240, 2%, 13%)",
+          foreground: "hsl(0, 0%, 84%)",
+        },
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

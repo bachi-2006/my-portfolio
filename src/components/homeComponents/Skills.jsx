@@ -2,12 +2,13 @@ import React from "react";
 import OrbitingImages from "../OrbitingImages";
 import TypingEffect from "../TypingEffect";
 
+const textData = [
+	{ text: "Data Analytics" },
+	{ text: "Machine Learning" },
+	{ text: "IoT & Embedded Systems" },
+];
+
 export default function Skills() {
-	const textData = [
-		{ text: "Data Analytics" },
-		{ text: "Machine Learning" },
-		{ text: "IoT & Embedded Systems" },
-	];
 	return (
 		<div className="hskills homebox relative overflow-hidden p-4 sm:p-6 md:p-8 flex flex-col justify-between">
 			<div className="text-white text-xl sm:text-2xl md:text-3xl font-normal cristik">

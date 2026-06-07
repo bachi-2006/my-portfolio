@@ -21,13 +21,13 @@ export default function Resume() {
 
 								<img
 										className="w-[70%] sm:w-[75%] md:w-[80%] absolute bottom-[-10px] sm:bottom-[-15px] md:bottom-[-20px] left-[10px] sm:left-[15px] md:left-[20px] z-10 rotate-12 hover:rotate-[16deg] hover:scale-[1.1] transition-transform peer cursor-pointer rounded-lg"
-										src="resume.png"
+										src="/resume.png"
 										alt="Resume"
 								/>
 
 								<img
 										className="w-[70%] sm:w-[75%] md:w-[80%] absolute opacity-45 bottom-[-10px] sm:bottom-[-15px] md:bottom-[-20px] left-[10px] sm:left-[15px] md:left-[20px] rotate-16 peer-hover:rotate-4 peer-hover:scale-[1.1] rounded-lg transition-transform"
-										src="resume.png"
+										src="/resume.png"
 										alt="Resume Background"
 								/>
 						</div>

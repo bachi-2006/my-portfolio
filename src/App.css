@@ -647,7 +647,7 @@ main {
 	z-index: 1;
 
 	grid-template-rows: auto;
-	cursor: url(../public/cursor.png), auto;
+	cursor: url(/cursor.png), auto;
 }
 
 .homebox {
@@ -662,13 +662,12 @@ main {
 	.bentogrid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 180px 140px 180px 180px 180px 180px 180px 180px;
+		grid-template-rows: 180px 140px 180px 180px 180px 180px 180px;
 		grid-template-areas:
 			"github github"
 			"hsocial hsocial"
 			"hresume homebox2"
-			"hresume hlibrary"
-			"hshowcase hlibrary"
+			"hresume hshowcase"
 			"hskills hskills"
 			"hprojects hprojects"
 			"hquotes hquotes"
@@ -686,8 +685,8 @@ main {
 			"github github homebox2"
 			"hsocial hsocial hsocial"
 			"hresume hskills hskills"
-			"hresume hshowcase hlibrary"
-			"hquotes hquotes hlibrary"
+			"hresume hshowcase hshowcase"
+			"hquotes hquotes hquotes"
 			"hprojects hprojects hprojects"
 			". . .";
 		/* Debugging: Check if this appears */

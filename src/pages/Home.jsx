@@ -4,8 +4,8 @@ import Resume from "../components/homeComponents/Resume";
 import Skills from "../components/homeComponents/Skills";
 import Quotes from "../components/homeComponents/Quotes";
 import Projects from "../components/homeComponents/Projects";
-import Library from "../components/homeComponents/Library";
 import Showcase from "../components/homeComponents/Showcase";
+import GitHubStats from "../components/GitHubStats";
 
 export default function Home() {
 	return (
@@ -58,16 +58,12 @@ export default function Home() {
 						rel="noopener noreferrer"
 						className="flex w-full h-full justify-center items-center"
 					>
-						<img
-							className="cursor-pointer max-w-full"
-							src="https://streak-stats.demolab.com/?user=bachi-2006&theme=rising-sun&hide_border=true&background=00000000"
-							alt="GitHub Streak Stats"
-						/>
+						<GitHubStats />
 					</a>
 				</div>
 
 				{/* Like Button */}
-				<div className="showcase homebox relative overflow-hidden flex flex-col items-center justify-center">
+				<div className="homebox2 homebox relative overflow-hidden flex flex-col items-center justify-center">
 					<span className="text-white cristik p-4 lg:text-2xl md:text-2xl text-xl text-center">
 						Liked the <br /> Portfolio?
 					</span>
@@ -128,7 +124,6 @@ export default function Home() {
 				<Skills />
 				<Quotes />
 				<Projects />
-				<Library />
 				<Showcase />
 			</div>
 		</article>
