@@ -1,14 +1,15 @@
 # Rohith's Portfolio
 
-A modern, interactive portfolio website built with React and Vite to showcase projects, achievements, and skills.
+A personal portfolio website built with React and Vite to present projects, skills, experience, and contact links in an interactive single-page app.
 
-## Features
+## What’s Included
 
-- Home page with hero section, GitHub streak, social links, resume, skills, quotes, projects, library, and showcase sections
-- About page with experience, skills, certifications, education, and achievements
-- Portfolio page with project filters and detail sheets
-- Blog, Contact, and Experiments pages
-- Dark themed UI with animated interactions
+- Home page with hero content, GitHub stats, social links, resume, skills, quotes, projects, and showcase sections
+- About page with background, experience, skills, certifications, education, and achievements
+- Portfolio page with project cards, filters, and detail sheets
+- Contact page for outreach
+- Experiments page for interactive and visual side projects
+- Animated dark UI with custom loaders, motion, and data-driven components
 
 ## Tech Stack
 
@@ -20,17 +21,18 @@ A modern, interactive portfolio website built with React and Vite to showcase pr
 - Chart.js
 - Axios
 
-## Development
+## Local Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Production Checks
 
 ```bash
 npm run build
+npm run lint
 ```
 
 ## Preview
@@ -39,7 +41,7 @@ npm run build
 npm run preview
 ```
 
-## Notes
+## Deployment
 
 - The app is configured as a Vite single-page application.
 - SPA rewrites are included for Netlify and Vercel deployments.
