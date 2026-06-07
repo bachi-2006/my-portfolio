@@ -1,0 +1,1 @@
+"Prompt Forge online. Type 'help' for commands, or 'forge' to switch the sandbox into creative synthesis mode."

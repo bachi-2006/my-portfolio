@@ -1,0 +1,11 @@
+Prompt Forge
+=============
+
+This sandbox turns your terminal history into a live creative surface.
+
+Try:
+- forge
+- terminal-shell.sh
+- cat status.txt
+
+The panel on the right reacts to command history and stays in sync with the shell.
